@@ -40,9 +40,11 @@
         <th>Workers</th>
         <th>Valid Shares</th>
         <th>Invalid Shares</th>
-        <th>Blocks</th>
+        <th>Total Blocks</th>
+        <th>Pending</th>
+        <th>Confirmed</th>
+        <th>Orphaned</th>
         <th>Hashrate</th>
-    </tr>
     </tr>
     </thead>
     {{ for(var pool in it.stats.pools) { }}
@@ -53,6 +55,9 @@
         <td>{{=it.stats.pools[pool].poolStats.validShares}}</td>
         <td>{{=it.stats.pools[pool].poolStats.invalidShares}}</td>
         <td>{{=it.stats.pools[pool].poolStats.validBlocks}}</td>
+        <td>{{=it.stats.pools[pool].blocks.pending}}</td>
+        <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
+        <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
         <td>{{=it.stats.pools[pool].hashrateString}}</td>
     </tr>
     {{ } }}
